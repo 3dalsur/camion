@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Análisis de Viga – Camión</title>
+</head>
+<body>
+
+    <h1>Análisis de Viga – Carga Móvil de Camión</h1>
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Calcular</button>
+    </form>
+
+    {% if resultados %}
+        <h2>Resultados</h2>
+        <table border="1" cellpadding="5">
+            <tr>
+                <th>Coordenada (m)</th>
+                <th>M Camión</th>
+                <th>M Peso Propio</th>
+                <th>M Total</th>
+            </tr>
+            {% for r in resultados %}
+            <tr>
+                <td>{{ r.0|floatformat:2 }}</td>
+                <td>{{ r.1|floatformat:2 }}</td>
+                <td>{{ r.2|floatformat:2 }}</td>
+                <td>{{ r.3|floatformat:2 }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+
+</body>
+</html>
