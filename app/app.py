@@ -57,7 +57,7 @@ class CamionState(rx.State):
                 V = max(S - Y, 0.0)
                 W = max(S - Z, 0.0)
 
-                M = (RA * S - p1*U - p2*V - p3*W) * IM
+                M = (RA * S - p1 * U - p2 * V - p3 * W) * IM
 
                 if M > MM[n]:
                     MM[n] = M
