@@ -77,7 +77,7 @@ class CamionState(rx.State):
             MP = 0.5 * self.Q * DI * (self.L - DI)
             MT = MM[n] + MP
             resultado.append(
-                f"{DI:8.2f} | {MM[n]:8.2f} | {MP:6.2f} | {MT:8.2f}"
+                f"{DI:8.2f} | {MM[n]:14.4f} | {MP:10.4f} | {MT:14.4f}"
             )
             DI += self.PL
 
